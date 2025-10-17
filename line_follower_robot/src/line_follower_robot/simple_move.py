@@ -10,8 +10,8 @@ class RobotMover(Node):
         super().__init__('simple_move')
 
         # Parameters
-        self.fixed_forward_vel = 0.5
-        self.kp = 6.0
+        self.fixed_forward_vel = 0.55
+        self.kp = 6.5
         self.ki = 0.2
         self.kd = 0.6
         self.delta = 0.1
@@ -59,8 +59,8 @@ class RobotMover(Node):
         self.cur_error = self.left_value - self.right_value
 
         # Make the error more reliable when the robot is extremely off-line
-        if self.cur_error < 0.01:
-            self.cur_error += (1.0 if self.cur_error > 0.0 else -1.0) * 0.5 * (0.71 - self.middle_value)
+        #if self.cur_error < 0.01 and (self.left_value > 0.01 or self.right_value > 0.01):
+        #    self.cur_error += (1.0 if self.cur_error > 0.0 else -1.0) * 0.5 * (0.71 - self.middle_value)
 
         # (P)roportional
         error = self.cur_error
