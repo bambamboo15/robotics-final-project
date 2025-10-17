@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<sdf version="1.8">
+	<model name="line_follower_world_mesh">
+		<static>true</static>
+		<link name="world_link">
+			<visual name="world_visual">
+				<geometry>
+					<mesh>
+						<uri>model://line_follower_world/line_follower_world.dae</uri>
+					</mesh>
+				</geometry>
+			</visual>
+			<collision name="world_collision">
+				<geometry>
+					<mesh>
+						<uri>model://line_follower_world/line_follower_world.dae</uri>
+					</mesh>
+				</geometry>
+			</collision>
+		</link>
+	</model>
+</sdf>
